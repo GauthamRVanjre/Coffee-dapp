@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-import '../styles/Navbar.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import "../styles/Navbar.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,12 +11,15 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
 
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <nav className="navbar">
@@ -35,18 +39,46 @@ const Navbar = () => {
           <span></span>
         </button>
 
-        <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li><button onClick={() => scrollToSection('hero')}>Home</button></li>
-          <li><button onClick={() => scrollToSection('about')}>Our Story</button></li>
-          <li><button onClick={() => scrollToSection('favorites')}>Favorites</button></li>
-          <li><button onClick={() => scrollToSection('features')}>Features</button></li>
-          <li><button onClick={() => scrollToSection('events')}>Events</button></li>
-          <li><button onClick={() => scrollToSection('membership')}>Membership</button></li>
-          <li><button onClick={() => scrollToSection('team')}>Our Team</button></li>
-          <li><Link to="/menu">Menu</Link></li>
+        <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
+          <li>
+            <button onClick={() => scrollToSection("hero")}>Home</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("about")}>Our Story</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("favorites")}>
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("features")}>
+              Features
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("events")}>Events</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("membership")}>
+              Membership
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("team")}>Our Team</button>
+          </li>
+          <li>
+            <Link to="/menu">Menu</Link>
+          </li>
+
+          <ConnectButton />
+
           <li>
             <Link to="/cart" className="cart-link">
-              Cart {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
+              Cart{" "}
+              {cartItemCount > 0 && (
+                <span className="cart-badge">{cartItemCount}</span>
+              )}
             </Link>
           </li>
         </ul>
