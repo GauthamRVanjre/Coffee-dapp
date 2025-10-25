@@ -6,7 +6,7 @@ import "../styles/MenuPage.css";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const { addToCart } = useCart();
+  const { addToCart, cartItems } = useCart();
 
   const categories = [
     { id: "all", name: "All" },
@@ -89,7 +89,7 @@ const MenuPage = () => {
       price: 5.29,
       category: "milk",
       image:
-        "https://images.pexels.com/photos/6205509/pexels-photo-6205509.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       id: "9",
@@ -212,8 +212,6 @@ const MenuPage = () => {
 
   return (
     <div className="menu-page">
-      <Navbar />
-
       <div className="menu-hero">
         <h1>Our Menu</h1>
         <p>Explore our artisan coffee selection</p>
@@ -245,12 +243,18 @@ const MenuPage = () => {
                 <p>{item.description}</p>
                 <div className="menu-card-footer">
                   <span className="menu-price">${item.price.toFixed(2)}</span>
-                  <button
-                    className="add-to-cart-btn"
-                    onClick={() => handleAddToCart(item)}
-                  >
-                    Add to Cart
-                  </button>
+                  {cartItems.some((cartItem) => cartItem.id === item.id) ? (
+                    <div className="quantity-control">
+                      <span>Added</span>
+                    </div>
+                  ) : (
+                    <button
+                      className="add-to-cart-btn"
+                      onClick={() => handleAddToCart(item)}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
