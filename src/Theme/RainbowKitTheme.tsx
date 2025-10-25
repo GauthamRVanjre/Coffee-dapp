@@ -1,10 +1,10 @@
 import { Theme } from "@rainbow-me/rainbowkit";
 export const CoffeeTheme: Theme = {
   blurs: {
-    modalOverlay: "rgba(62, 39, 35, 0.95)",
+    modalOverlay: "opacity(0.6)",
   },
   colors: {
-    accentColor: "rgba(62, 39, 35, 0.95)",
+    accentColor: "rgba(205, 133, 63, 0.9)",
     accentColorForeground: "rgba(255, 255, 255, 0.95)",
 
     actionButtonBorder: "rgba(93, 64, 55, 0.4)",
