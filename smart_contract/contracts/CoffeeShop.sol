@@ -10,7 +10,7 @@ contract CoffeeShop {
     // Struct to store coffee purchase info
     struct Coffee {
         address sender;
-        string itemName;
+        string[] itemName;
         uint256 timestamp;
         uint256 amount;
     }
@@ -20,13 +20,13 @@ contract CoffeeShop {
 
     event CoffeePurchased(
         address indexed buyer,
-        string itemName,
+        string[] itemName,
         uint256 amountInETH,
         uint256 timestamp
     );
 
     // Receive ETH when user buys
-    function buyCoffee(string calldata itemName) external payable {
+    function buyCoffee(string[] calldata itemName) external payable {
         require(msg.value > 0, "Payment must be greater than 0");
 
         payable(owner).transfer(msg.value);
