@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "../styles/Navbar.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -7,6 +7,8 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cartItems } = useCart();
+  const location = useLocation();
+  const currentPagePath = location.pathname;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -40,36 +42,46 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-          <li>
-            <button onClick={() => scrollToSection("hero")}>Home</button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("about")}>Our Story</button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("favorites")}>
-              Favorites
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("features")}>
-              Features
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("events")}>Events</button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("membership")}>
-              Membership
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("team")}>Our Team</button>
-          </li>
-          <li>
-            <Link to="/menu">Menu</Link>
-          </li>
+          {currentPagePath !== "/menu" && (
+            <>
+              <li>
+                <button onClick={() => scrollToSection("hero")}>Home</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("about")}>
+                  Our Story
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("favorites")}>
+                  Favorites
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("features")}>
+                  Features
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("events")}>
+                  Events
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("membership")}>
+                  Membership
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("team")}>
+                  Our Team
+                </button>
+              </li>
+              <li>
+                <Link to="/menu">Menu</Link>
+              </li>
+            </>
+          )}
 
           <ConnectButton />
 

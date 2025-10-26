@@ -36,10 +36,10 @@
 }
 
 .logo-text {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -72,10 +72,10 @@
 
 .navbar-menu li button,
 .navbar-menu li a {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   background: none;
   border: none;
@@ -87,19 +87,19 @@
 
 .navbar-menu li button::after,
 .navbar-menu li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: #D7CCC8;
+  background: #d7ccc8;
   transition: width 0.3s ease;
 }
 
 .navbar-menu li button:hover,
 .navbar-menu li a:hover {
-  color: #D7CCC8;
+  color: #d7ccc8;
 }
 
 .navbar-menu li button:hover::after,
@@ -110,7 +110,7 @@
 .cart-link {
   position: relative;
   padding: 8px 16px !important;
-  background: linear-gradient(135deg, #8D6E63, #A1887F);
+  background: linear-gradient(135deg, #8d6e63, #a1887f);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
@@ -129,7 +129,7 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background: #FF6B6B;
+  background: #ff6b6b;
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
@@ -165,7 +165,7 @@
   }
 
   .navbar-menu.active {
-    max-height: 500px;
+    max-height: 650px;
     opacity: 1;
   }
 

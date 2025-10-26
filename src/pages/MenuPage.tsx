@@ -211,63 +211,66 @@ const MenuPage = () => {
   };
 
   return (
-    <div className="menu-page">
-      <div className="menu-hero">
-        <h1>Our Menu</h1>
-        <p>Explore our artisan coffee selection</p>
-      </div>
-
-      <div className="menu-container">
-        <div className="category-filter">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`category-btn ${
-                selectedCategory === category.id ? "active" : ""
-              }`}
-              onClick={() => setSelectedCategory(category.id)}
-            >
-              {category.name}
-            </button>
-          ))}
+    <>
+      <Navbar />
+      <div className="menu-page">
+        <div className="menu-hero">
+          <h1>Our Menu</h1>
+          <p>Explore our artisan coffee selection</p>
         </div>
 
-        <div className="menu-grid">
-          {filteredItems.map((item) => (
-            <div key={item.id} className="menu-card">
-              <div className="menu-card-image">
-                <img src={item.image} alt={item.name} />
-              </div>
-              <div className="menu-card-content">
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <div className="menu-card-footer">
-                  <span className="menu-price">${item.price.toFixed(2)}</span>
-                  {cartItems.some((cartItem) => cartItem.id === item.id) ? (
-                    <div className="quantity-control">
-                      <span>Added</span>
-                    </div>
-                  ) : (
-                    <button
-                      className="add-to-cart-btn"
-                      onClick={() => handleAddToCart(item)}
-                    >
-                      Add to Cart
-                    </button>
-                  )}
+        <div className="menu-container">
+          <div className="category-filter">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className={`category-btn ${
+                  selectedCategory === category.id ? "active" : ""
+                }`}
+                onClick={() => setSelectedCategory(category.id)}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+
+          <div className="menu-grid">
+            {filteredItems.map((item) => (
+              <div key={item.id} className="menu-card">
+                <div className="menu-card-image">
+                  <img src={item.image} alt={item.name} />
+                </div>
+                <div className="menu-card-content">
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <div className="menu-card-footer">
+                    <span className="menu-price">${item.price.toFixed(2)}</span>
+                    {cartItems.some((cartItem) => cartItem.id === item.id) ? (
+                      <div className="quantity-control">
+                        <span>Added</span>
+                      </div>
+                    ) : (
+                      <button
+                        className="add-to-cart-btn"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredItems.length === 0 && (
-          <div className="empty-state">
-            <p>No items found in this category.</p>
+            ))}
           </div>
-        )}
+
+          {filteredItems.length === 0 && (
+            <div className="empty-state">
+              <p>No items found in this category.</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
