@@ -1,6 +1,6 @@
 .payment-success-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
 }
 
 .success-container {
@@ -64,10 +64,11 @@
   border-radius: 50%;
   display: block;
   stroke-width: 2;
-  stroke: #5D4037;
+  stroke: #5d4037;
   stroke-miterlimit: 10;
-  box-shadow: inset 0 0 0 #5D4037;
-  animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+  box-shadow: inset 0 0 0 #5d4037;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
 }
 
 .checkmark-circle {
@@ -75,7 +76,7 @@
   stroke-dashoffset: 166;
   stroke-width: 2;
   stroke-miterlimit: 10;
-  stroke: #5D4037;
+  stroke: #5d4037;
   fill: none;
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
@@ -87,6 +88,10 @@
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
 
+.transaction-link {
+  color: #5d4037;
+}
+
 @keyframes stroke {
   100% {
     stroke-dashoffset: 0;
@@ -94,7 +99,8 @@
 }
 
 @keyframes scale {
-  0%, 100% {
+  0%,
+  100% {
     transform: none;
   }
   50% {
@@ -104,22 +110,22 @@
 
 @keyframes fill {
   100% {
-    box-shadow: inset 0 0 0 50px #5D4037;
+    box-shadow: inset 0 0 0 50px #5d4037;
   }
 }
 
 .success-content h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #3E2723;
+  color: #3e2723;
   margin: 0 0 16px 0;
 }
 
 .success-message {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
-  color: #6D4C41;
+  color: #6d4c41;
   line-height: 1.6;
   margin: 0 0 40px 0;
 }
@@ -130,7 +136,7 @@
   justify-content: center;
   margin-bottom: 40px;
   padding: 32px;
-  background: #FAFAFA;
+  background: #fafafa;
   border-radius: 15px;
 }
 
@@ -141,19 +147,19 @@
 }
 
 .detail-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #8D6E63;
+  color: #8d6e63;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .detail-value {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #3E2723;
+  color: #3e2723;
 }
 
 .success-actions {
@@ -170,19 +176,19 @@
 
 .thank-you-message {
   padding-top: 32px;
-  border-top: 1px solid #D7CCC8;
+  border-top: 1px solid #d7ccc8;
 }
 
 .thank-you-message p {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
-  color: #5D4037;
+  color: #5d4037;
   margin: 0 0 8px 0;
 }
 
 .thank-you-message .small-text {
   font-size: 0.9rem;
-  color: #8D6E63;
+  color: #8d6e63;
   margin: 0;
 }
 

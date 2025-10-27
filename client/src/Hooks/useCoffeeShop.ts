@@ -13,8 +13,8 @@ export const useCoffeeShop = (address: string) => {
     hash,
   });
 
-  if (isSuccess) navigate("/payment-success");
-  if (isError) navigate("/payment-failure");
+  if (isSuccess) navigate(`/payment-success/${hash}`);
+  if (isError) navigate(`/payment-failure/${hash}`);
 
   const buyCoffee = async (itemName: string[], value: bigint) => {
     console.log("value", value);

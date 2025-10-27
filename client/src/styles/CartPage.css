@@ -290,6 +290,11 @@
   transition: all 0.3s ease;
 }
 
+.loading {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .checkout-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(93, 64, 55, 0.3);

@@ -19,7 +19,10 @@ function App() {
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/payment-success" element={<PaymentSuccessPage />} />
+          <Route
+            path="/payment-success/:txhash"
+            element={<PaymentSuccessPage />}
+          />
           <Route path="/payment-failure" element={<PaymentFailurePage />} />
         </Routes>
       </Router>

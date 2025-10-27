@@ -1,16 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
 import "../styles/CartPage.css";
-import { useQuery } from "@tanstack/react-query";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { parseEther } from "viem";
 import { useCoffeeShop } from "../Hooks/useCoffeeShop";
 import { COFFEE_SHOP_SMART_ADDRESS } from "../contants/constants";
 
 const CartPage = () => {
-  const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
-  const navigate = useNavigate();
+  const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } =
+    useCart();
   const [ethAmount, setEthAmount] = useState<number>(0);
   const subtotal = getCartTotal();
   const tax = subtotal * 0.08;
@@ -40,6 +39,8 @@ const CartPage = () => {
       cartItems.map((item) => item.name),
       value
     );
+
+    clearCart();
   };
 
   return (
@@ -138,8 +139,7 @@ const CartPage = () => {
               </div>
 
               <button
-                className="checkout-btn"
-                // onClick={() => navigate("/checkout")}
+                className={`checkout-btn ${isLoading ? "loading" : ""}`}
                 onClick={() => buyCoffeeFunction()}
                 disabled={isLoading}
               >

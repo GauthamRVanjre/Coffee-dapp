@@ -5,11 +5,11 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #FAFAFA;
-  color: #3E2723;
+  background: #fafafa;
+  color: #3e2723;
 }
 
 html {
@@ -22,7 +22,7 @@ html {
 
 .btn {
   padding: 14px 32px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
@@ -34,7 +34,7 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #8D6E63, #A1887F);
+  background: linear-gradient(135deg, #8d6e63, #a1887f);
   color: white;
 }
 
@@ -44,12 +44,12 @@ html {
 }
 
 .btn-secondary {
-  background: transparent;
+  background: #3e2723;
   color: white;
   border: 2px solid white;
 }
 
 .btn-secondary:hover {
   background: white;
-  color: #3E2723;
+  color: #3e2723;
 }
