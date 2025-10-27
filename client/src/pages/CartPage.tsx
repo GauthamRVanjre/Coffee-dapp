@@ -8,8 +8,7 @@ import { useCoffeeShop } from "../Hooks/useCoffeeShop";
 import { COFFEE_SHOP_SMART_ADDRESS } from "../contants/constants";
 
 const CartPage = () => {
-  const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } =
-    useCart();
+  const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
   const [ethAmount, setEthAmount] = useState<number>(0);
   const subtotal = getCartTotal();
   const tax = subtotal * 0.08;
@@ -39,8 +38,6 @@ const CartPage = () => {
       cartItems.map((item) => item.name),
       value
     );
-
-    clearCart();
   };
 
   return (

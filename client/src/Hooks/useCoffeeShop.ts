@@ -3,17 +3,22 @@ import { abi } from "../contants/ABI.json";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 export const useCoffeeShop = (address: string) => {
   const { writeContractAsync } = useWriteContract();
   const navigate = useNavigate();
   const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
+  const { clearCart } = useCart();
 
   const { isLoading, isSuccess, isError } = useWaitForTransactionReceipt({
     hash,
   });
 
-  if (isSuccess) navigate(`/payment-success/${hash}`);
+  if (isSuccess) {
+    navigate(`/payment-success/${hash}`);
+    clearCart();
+  }
   if (isError) navigate(`/payment-failure/${hash}`);
 
   const buyCoffee = async (itemName: string[], value: bigint) => {
