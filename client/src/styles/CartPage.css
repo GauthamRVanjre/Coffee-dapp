@@ -1,25 +1,25 @@
 .cart-page {
   min-height: 100vh;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
 .cart-hero {
   margin-top: 70px;
   padding: 80px 32px 50px;
-  background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
+  background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
   text-align: center;
   color: white;
 }
 
 .cart-hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 700;
   margin: 0 0 12px 0;
 }
 
 .cart-hero p {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
   margin: 0;
@@ -47,16 +47,16 @@
 }
 
 .empty-cart h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
-  color: #3E2723;
+  color: #3e2723;
   margin: 0 0 16px 0;
 }
 
 .empty-cart p {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
-  color: #6D4C41;
+  color: #6d4c41;
   margin: 0 0 32px 0;
 }
 
@@ -73,9 +73,9 @@
 }
 
 .cart-items h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
-  color: #3E2723;
+  color: #3e2723;
   margin: 0 0 24px 0;
 }
 
@@ -114,25 +114,25 @@
 }
 
 .cart-item-details h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.3rem;
-  color: #3E2723;
+  color: #3e2723;
   margin: 0;
 }
 
 .cart-item-details p {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.9rem;
-  color: #6D4C41;
+  color: #6d4c41;
   margin: 0;
   line-height: 1.5;
 }
 
 .item-price {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #8D6E63;
+  color: #8d6e63;
   margin-top: auto;
 }
 
@@ -149,7 +149,7 @@
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  background: #EFEBE9;
+  background: #efebe9;
   border-radius: 8px;
 }
 
@@ -161,7 +161,7 @@
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #5D4037;
+  color: #5d4037;
   background: white;
   border: none;
   border-radius: 6px;
@@ -170,7 +170,7 @@
 }
 
 .quantity-control button:hover:not(:disabled) {
-  background: #8D6E63;
+  background: #8d6e63;
   color: white;
 }
 
@@ -180,19 +180,19 @@
 }
 
 .quantity-control span {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #3E2723;
+  color: #3e2723;
   min-width: 24px;
   text-align: center;
 }
 
 .item-total {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #5D4037;
+  color: #5d4037;
 }
 
 .remove-btn {
@@ -202,17 +202,17 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #6D4C41;
+  color: #6d4c41;
   background: transparent;
-  border: 2px solid #D7CCC8;
+  border: 2px solid #d7ccc8;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .remove-btn:hover {
-  background: #FF6B6B;
-  border-color: #FF6B6B;
+  background: #ff6b6b;
+  border-color: #ff6b6b;
   color: white;
 }
 
@@ -227,9 +227,9 @@
 }
 
 .cart-summary h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.75rem;
-  color: #3E2723;
+  color: #3e2723;
   margin: 0 0 24px 0;
 }
 
@@ -238,9 +238,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
-  color: #5D4037;
+  color: #5d4037;
+}
+
+.total-summary-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #5d4037;
+}
+
+.total-eth {
+  font-size: 12px;
 }
 
 .summary-row span:last-child {
@@ -249,7 +264,7 @@
 
 .summary-divider {
   height: 1px;
-  background: #D7CCC8;
+  background: #d7ccc8;
   margin: 16px 0;
 }
 
@@ -257,18 +272,18 @@
   padding: 20px 0 0 0;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #3E2723;
+  color: #3e2723;
 }
 
 .checkout-btn {
   width: 100%;
   padding: 16px;
   margin-top: 24px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #5D4037, #6D4C41);
+  background: linear-gradient(135deg, #5d4037, #6d4c41);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -284,15 +299,15 @@
   display: block;
   text-align: center;
   margin-top: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  color: #8D6E63;
+  color: #8d6e63;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .continue-shopping:hover {
-  color: #5D4037;
+  color: #5d4037;
 }
 
 @media (max-width: 968px) {

@@ -5,6 +5,8 @@ import "../styles/CartPage.css";
 import { useQuery } from "@tanstack/react-query";
 import { useCallback, useEffect, useState } from "react";
 import { parseEther } from "viem";
+import { useCoffeeShop } from "../Hooks/useCoffeeShop";
+import { COFFEE_SHOP_SMART_ADDRESS } from "../contants/constants";
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
@@ -13,6 +15,7 @@ const CartPage = () => {
   const subtotal = getCartTotal();
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
+  const { buyCoffee, isLoading } = useCoffeeShop(COFFEE_SHOP_SMART_ADDRESS);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,42 +23,23 @@ const CartPage = () => {
         "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
       );
       const data = await res.json();
-      setEthAmount(data.ethereum.usd);
+      if (!data.ethereum.usd) return;
+      setEthAmount(total / data.ethereum.usd);
     };
     fetchData();
-
-    const priceInEth = total / ethAmount;
-    const value = parseEther(priceInEth.toFixed(6));
-    console.log("priceInEth", priceInEth);
-    console.log("value", value);
   }, [total]);
-
-  console.log("ethAmount", ethAmount);
-  // useEffect(() => {
-  //   const { data, error, isLoading } = useQuery({
-  //     queryKey: ["buyCoffee"],
-  //     queryFn: async () => {
-  //       const res = await fetch(
-  //         "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
-  //       );
-  //       return res.json();
-  //     },
-  //     refetchInterval: 5000,
-  //   });
-  //   const ethUsd = data.ethereum.usd;
-  // }, [total]);
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) return;
     updateQuantity(id, newQuantity);
   };
 
-  const buyCoffee = async (total: number) => {
-    // Convert $5 → ETH
-    // const priceInEth = COFFEE_PRICE_USD / ethUsd;
-    // const value = parseEther(priceInEth.toFixed(6)); // convert to wei
-    // await buyCoffee("Cappuccino", value);
-    // alert(`ETH Amount! ${ethUsd}`);
+  const buyCoffeeFunction = async () => {
+    const value = parseEther(ethAmount.toFixed(6));
+    await buyCoffee(
+      cartItems.map((item) => item.name),
+      value
+    );
   };
 
   return (
@@ -147,15 +131,19 @@ const CartPage = () => {
 
               <div className="summary-row total">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <div className="total-summary-row">
+                  <span>${total.toFixed(2)}</span>
+                  <span className="total-eth">{ethAmount.toFixed(6)} ETH</span>
+                </div>
               </div>
 
               <button
                 className="checkout-btn"
-                // onClick={() => navigate('/checkout')}
-                onClick={() => buyCoffee(total)}
+                // onClick={() => navigate("/checkout")}
+                onClick={() => buyCoffeeFunction()}
+                disabled={isLoading}
               >
-                Proceed to Checkout
+                {isLoading ? "⏳ Transaction in progress..." : "Checkout"}
               </button>
 
               <Link to="/menu" className="continue-shopping">
