@@ -6,6 +6,7 @@ import CartPage from "./pages/CartPage";
 import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 import PaymentFailurePage from "./pages/PaymentFailurePage";
 import "./App.css";
+import SippersPage from "./pages/SippersPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             element={<PaymentSuccessPage />}
           />
           <Route path="/payment-failure" element={<PaymentFailurePage />} />
+          <Route path="/sippers" element={<SippersPage />} />
         </Routes>
       </Router>
     </CartProvider>
