@@ -1,4 +1,4 @@
-import { useContractRead } from "wagmi";
+import { useReadContract } from "wagmi";
 import { COFFEE_SHOP_SMART_ADDRESS, CONTRACT_ABI } from "../contants/constants";
 import { useEffect, useState } from "react";
 import { formatEther } from "viem";
@@ -15,7 +15,7 @@ interface Coffee {
 const SippersPage = () => {
   const [transactions, setTransactions] = useState<Coffee[]>([]);
 
-  const { data: coffeeData } = useContractRead({
+  const { data: coffeeData } = useReadContract({
     address: COFFEE_SHOP_SMART_ADDRESS,
     abi: CONTRACT_ABI,
     functionName: "getAllCoffees",
