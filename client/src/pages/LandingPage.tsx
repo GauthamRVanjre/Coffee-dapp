@@ -266,40 +266,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section id="membership" className="membership-section">
-        <div className="section-container">
-          <h2 className="section-title">Brew Haven Membership</h2>
-          <p className="section-subtitle">
-            Unlock exclusive benefits and rewards
-          </p>
-
-          <div className="membership-content">
-            <div className="membership-card">
-              <div className="membership-icon">🌟</div>
-              <h3>Premium Perks</h3>
-              <ul>
-                <li>15% discount on all coffee drinks</li>
-                <li>20% off student special with valid ID</li>
-                <li>Early access to new coffee tastings</li>
-                <li>Digital loyalty program with rewards</li>
-                <li>Exclusive member-only events</li>
-                <li>Corporate team discounts available</li>
-                <li>Student-focused study space priority</li>
-                <li>Birthday month special treats</li>
-              </ul>
-              <button className="btn btn-primary">Join Now</button>
-            </div>
-
-            <div className="membership-image">
-              <img
-                src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Membership benefits"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="team" className="team-section">
         <div className="section-container">
           <h2 className="section-title">Meet Our Team</h2>
