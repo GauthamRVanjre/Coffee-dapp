@@ -42,7 +42,7 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-          {currentPagePath !== "/menu" && (
+          {currentPagePath === "/" && (
             <>
               <li>
                 <button onClick={() => scrollToSection("hero")}>Home</button>
@@ -68,23 +68,21 @@ const Navbar = () => {
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection("membership")}>
-                  Membership
-                </button>
-              </li>
-              <li>
                 <button onClick={() => scrollToSection("team")}>
                   Our Team
                 </button>
-              </li>
-              <li>
-                <Link to="/menu">Menu</Link>
               </li>
             </>
           )}
 
           <ConnectButton />
 
+          <li>
+            <Link to="/menu">Menu</Link>
+          </li>
+          <li>
+            <Link to="/sippers">Sippers</Link>
+          </li>
           <li>
             <Link to="/cart" className="cart-link">
               Cart{" "}
